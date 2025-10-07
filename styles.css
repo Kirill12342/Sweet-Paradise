@@ -1,0 +1,1562 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #4a4a4a;
+    background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: #2d1b3d;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: 'Dancing Script', cursive;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #6b6b6b;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ff6b9d;
+    border: 2px solid #ff6b9d;
+}
+
+.btn-secondary:hover {
+    background: #ff6b9d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #ff6b9d;
+    color: #ff6b9d;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-outline:hover {
+    background: #ff6b9d;
+    color: white;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ff6b9d;
+}
+
+.nav-brand h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ff6b9d;
+}
+
+.nav-brand i {
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff6b9d;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #4a4a4a;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #6b6b6b;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake-animation {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.cake-layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.layer-1 {
+    bottom: 0;
+    width: 200px;
+    height: 80px;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+}
+
+.layer-2 {
+    bottom: 70px;
+    width: 160px;
+    height: 60px;
+    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+}
+
+.layer-3 {
+    bottom: 120px;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+}
+
+.cake-decoration {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    color: #FFD700;
+    font-size: 1.5rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    margin-bottom: 1rem;
+    color: #2d1b3d;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #6b6b6b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Constructor Section */
+.constructor {
+    background: white;
+    border-radius: 30px;
+    margin: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.constructor-content {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+/* Cake Preview */
+.cake-preview {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.cake-preview h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2d1b3d;
+}
+
+/* Progress Bar */
+.progress-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.progress-line {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    right: 1rem;
+    height: 4px;
+    background: #e0e6ed;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.progress-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+.progress-step {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 3px solid #e0e6ed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active .step-icon {
+    border-color: #ff6b9d;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+    color: white;
+    transform: scale(1.1);
+}
+
+.progress-step.completed .step-icon {
+    border-color: #28a745;
+    background: #28a745;
+    color: white;
+}
+
+.progress-step span {
+    font-size: 0.8rem;
+    color: #6b6b6b;
+    font-weight: 500;
+    text-align: center;
+}
+
+.progress-step.active span {
+    color: #ff6b9d;
+    font-weight: 600;
+}
+
+/* 3D Cake Preview */
+.preview-cake-3d {
+    width: 280px;
+    height: 350px;
+    margin: 0 auto 2rem;
+    perspective: 1000px;
+    perspective-origin: center center;
+}
+
+.cake-scene {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate3d 20s linear infinite;
+}
+
+/* Multi-tier Cake Structure */
+.cake-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-style: preserve-3d;
+    height: 400px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cake-tier {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+}
+
+/* Tier 1 (Bottom/Largest) */
+.tier-1 {
+    z-index: 1;
+}
+
+.tier-1 .cake-base-3d {
+    width: 220px;
+    height: 90px;
+}
+
+.tier-1 .cake-cream-3d {
+    width: 200px;
+    height: 25px;
+    top: -18px;
+    left: 10px;
+}
+
+/* Tier 2 (Middle) */
+.tier-2 {
+    z-index: 2;
+    margin-bottom: 15px;
+}
+
+.tier-2 .cake-base-3d {
+    width: 180px;
+    height: 75px;
+}
+
+.tier-2 .cake-cream-3d {
+    width: 160px;
+    height: 20px;
+    top: -15px;
+    left: 10px;
+}
+
+/* Tier 3 (Top/Smallest) */
+.tier-3 {
+    z-index: 3;
+    margin-bottom: 20px;
+}
+
+.tier-3 .cake-base-3d {
+    width: 140px;
+    height: 60px;
+}
+
+.tier-3 .cake-cream-3d {
+    width: 120px;
+    height: 18px;
+    top: -12px;
+    left: 10px;
+}
+
+/* Responsive tier animations */
+.cake-tier.tier-entering {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+}
+
+.cake-tier.tier-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.cake-base-3d {
+    width: 200px;
+    height: 80px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.cake-top {
+    width: 100%;
+    height: 100%;
+    background: #F5DEB3;
+    border-radius: 15px;
+    position: absolute;
+    transform: rotateX(90deg) translateZ(40px);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.cake-side {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #F5DEB3 0%, #DEB887 50%, #CD853F 100%);
+    border-radius: 0 0 15px 15px;
+    position: absolute;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.cake-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3) 2px, transparent 2px),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 15px 15px, 10px 10px;
+    border-radius: 15px;
+    opacity: 0.6;
+}
+
+.cake-cream-3d {
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: 180px;
+    height: 25px;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.cream-layer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FFF8DC 0%, #FFFACD 100%);
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.cream-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.2) 2px,
+        rgba(255,255,255,0.2) 4px
+    );
+    border-radius: 12px;
+}
+
+.cake-decorations-3d {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease;
+    animation: sparkle 3s ease-in-out infinite;
+    z-index: 10;
+}
+
+.cake-shadow {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 30px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+@keyframes rotate3d {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.1); }
+}
+
+/* Nutrition & Price Info Panel */
+.cake-info-panel {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-display {
+    margin-bottom: 1.5rem;
+}
+
+.nutrition-display h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: #2d1b3d;
+    font-size: 1.1rem;
+}
+
+.nutrition-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.nutrition-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #ff6b9d;
+}
+
+.nutrition-item .label {
+    font-size: 0.9rem;
+    color: #6b6b6b;
+    font-weight: 500;
+}
+
+.nutrition-item .value {
+    font-weight: 600;
+    color: #2d1b3d;
+    font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-header h3 {
+    color: #2d1b3d;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6b6b6b;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #f0f0f0;
+    color: #ff6b9d;
+}
+
+.modal-body {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.ingredient-image {
+    background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+    border-radius: 15px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ingredient-icon {
+    font-size: 4rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.ingredient-details h4 {
+    color: #2d1b3d;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.ingredient-details p {
+    color: #6b6b6b;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.ingredient-nutrition {
+    margin-bottom: 1.5rem;
+}
+
+.ingredient-nutrition h5 {
+    color: #2d1b3d;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.nutrition-cell {
+    background: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 3px solid #ff6b9d;
+}
+
+.nutrition-cell .label {
+    font-size: 0.9rem;
+    color: #6b6b6b;
+}
+
+.nutrition-cell .value {
+    font-weight: 600;
+    color: #2d1b3d;
+    font-size: 0.9rem;
+}
+
+.ingredient-price {
+    padding: 1rem;
+    background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.price-info {
+    color: #2d1b3d;
+    font-size: 1.1rem;
+}
+
+.price-info strong {
+    color: #ff6b9d;
+    font-size: 1.2rem;
+}
+
+.modal-footer {
+    padding: 1rem 2rem 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Info Button on Option Cards */
+.option-card {
+    position: relative;
+}
+
+.info-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ff6b9d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-btn:hover {
+    background: #ff6b9d;
+    color: white;
+    transform: scale(1.1);
+}
+
+.info-btn i {
+    font-size: 0.9rem;
+}
+
+.price-display {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.price-label {
+    display: block;
+    font-size: 1rem;
+    color: #6b6b6b;
+    margin-bottom: 0.5rem;
+}
+
+.price-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff6b9d;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Constructor Options */
+.constructor-options {
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.option-group {
+    margin-bottom: 3rem;
+}
+
+.option-group h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2d1b3d;
+    font-size: 1.3rem;
+}
+
+.option-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.decoration-cards {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.tiers-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.tiers-cards .option-card {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tiers-cards .option-icon {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.option-card {
+    background: white;
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 107, 157, 0.2);
+    border-color: #ff6b9d;
+}
+
+.option-card.selected {
+    border-color: #ff6b9d;
+    background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+}
+
+.option-card.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background: #ff6b9d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.option-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.option-card h5 {
+    margin-bottom: 0.5rem;
+    color: #2d1b3d;
+    font-size: 1.1rem;
+}
+
+.option-card p {
+    font-size: 0.9rem;
+    color: #8b8b8b;
+    margin-bottom: 1rem;
+}
+
+.option-price {
+    font-weight: 600;
+    color: #ff6b9d;
+    font-size: 1.1rem;
+}
+
+/* Cart Section */
+.cart {
+    background: white;
+    border-radius: 20px;
+    margin: 2rem;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cart-header h3 {
+    color: #2d1b3d;
+}
+
+.cart-count {
+    background: #ff6b9d;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cart-items {
+    min-height: 150px;
+    margin-bottom: 2rem;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #8b8b8b;
+    font-style: italic;
+    padding: 3rem;
+}
+
+.cart-item {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-info h5 {
+    color: #2d1b3d;
+    margin-bottom: 0.5rem;
+}
+
+.cart-item-details {
+    font-size: 0.9rem;
+    color: #6b6b6b;
+}
+
+.cart-item-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff6b9d;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.total-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d1b3d;
+}
+
+.total-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff6b9d;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Ready Cakes Section */
+.ready-cakes {
+    background: linear-gradient(135deg, #f8e8ff 0%, #ffeef8 100%);
+    border-radius: 30px;
+    margin: 2rem;
+}
+
+.cakes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.cake-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cake-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 107, 157, 0.2);
+}
+
+.cake-image {
+    height: 200px;
+    background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.cake-info {
+    padding: 2rem;
+}
+
+.cake-info h4 {
+    margin-bottom: 1rem;
+    color: #2d1b3d;
+}
+
+.cake-info p {
+    margin-bottom: 1.5rem;
+    color: #6b6b6b;
+}
+
+.cake-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6b9d;
+    margin-bottom: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* About Section */
+.about {
+    background: white;
+    border-radius: 30px;
+    margin: 2rem;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    margin-bottom: 1.5rem;
+    color: #2d1b3d;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #6b6b6b;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature i {
+    color: #ff6b9d;
+    font-size: 1.2rem;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff6b9d;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #6b6b6b;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    background: #2d1b3d;
+    color: white;
+    margin-top: 4rem;
+    border-radius: 30px 30px 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-brand i {
+    font-size: 2rem;
+    color: #ff6b9d;
+}
+
+.footer-brand h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff6b9d;
+    font-size: 2rem;
+}
+
+.footer-brand p {
+    color: #b8b8b8;
+}
+
+.footer-info h4,
+.footer-hours h4 {
+    color: #ff6b9d;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-info p,
+.footer-hours p {
+    color: #b8b8b8;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-info i {
+    color: #ff6b9d;
+    width: 16px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #404040;
+}
+
+.footer-bottom p {
+    color: #888;
+    margin: 0;
+}
+
+.footer .container {
+    padding: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .constructor-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .cake-preview {
+        position: relative;
+        top: auto;
+    }
+
+    .modal-body {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .ingredient-image {
+        height: 120px;
+    }
+
+    .nutrition-stats,
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .cake-animation {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-stats {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .stat {
+        flex: 1;
+        margin: 0 0.5rem;
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .option-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .decoration-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tiers-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .tiers-cards .option-card {
+        min-height: 120px;
+    }
+
+    .tiers-cards .option-icon {
+        font-size: 1.5rem;
+    }
+
+    .cakes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Progress bar responsive */
+    .progress-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .progress-step span {
+        display: none;
+    }
+
+    .step-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Modal responsive */
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 1.5rem;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+    }
+
+    .modal-footer .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* 3D cake smaller on mobile */
+    .preview-cake-3d {
+        width: 250px;
+        height: 300px;
+    }
+
+    .cake-base-3d {
+        width: 160px;
+        height: 60px;
+    }
+
+    .cake-cream-3d {
+        width: 140px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .constructor,
+    .ready-cakes,
+    .about,
+    .cart {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .constructor-content {
+        padding: 1rem;
+    }
+
+    .cake-preview {
+        padding: 1rem;
+    }
+
+    .preview-cake {
+        width: 200px;
+        height: 250px;
+    }
+
+    .cake-base {
+        width: 160px;
+        height: 60px;
+    }
+
+    .cake-cream {
+        width: 140px;
+    }
+
+    .option-card {
+        padding: 1rem;
+    }
+
+    .option-icon {
+        font-size: 2.5rem;
+    }
+}

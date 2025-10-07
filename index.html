@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сладкий Рай - Конструктор тортов</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-birthday-cake"></i>
+                <h2>Сладкий Рай</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Главная</a></li>
+                <li><a href="#constructor" class="nav-link">Конструктор</a></li>
+                <li><a href="#ready-cakes" class="nav-link">Готовые торты</a></li>
+                <li><a href="#about" class="nav-link">О нас</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Создайте торт своей мечты</h1>
+                    <p>Уникальный конструктор тортов позволяет выбрать любые ингредиенты и создать идеальный десерт для вашего праздника</p>
+                    <div class="hero-buttons">
+                        <a href="#constructor" class="btn btn-primary">
+                            <i class="fas fa-magic"></i>
+                            Создать торт
+                        </a>
+                        <a href="#ready-cakes" class="btn btn-secondary">
+                            <i class="fas fa-eye"></i>
+                            Готовые торты
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="cake-animation">
+                        <div class="cake-layer layer-1"></div>
+                        <div class="cake-layer layer-2"></div>
+                        <div class="cake-layer layer-3"></div>
+                        <div class="cake-decoration">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Constructor -->
+    <section id="constructor" class="constructor">
+        <div class="container">
+            <div class="section-header">
+                <h2>Конструктор тортов</h2>
+                <p>Выберите размер, основу, начинку, крем и декор для создания уникального торта</p>
+            </div>
+            
+            <div class="constructor-content">
+                <!-- Cake Preview -->
+                <div class="cake-preview">
+                    <h3>Предварительный просмотр</h3>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-step" data-step="tiers">
+                            <div class="step-icon">🏗️</div>
+                            <span>Ярусы</span>
+                        </div>
+                        <div class="progress-step" data-step="size">
+                            <div class="step-icon">📏</div>
+                            <span>Размер</span>
+                        </div>
+                        <div class="progress-step" data-step="base">
+                            <div class="step-icon">🎂</div>
+                            <span>Основа</span>
+                        </div>
+                        <div class="progress-step" data-step="filling">
+                            <div class="step-icon">🍓</div>
+                            <span>Начинка</span>
+                        </div>
+                        <div class="progress-step" data-step="cream">
+                            <div class="step-icon">☁️</div>
+                            <span>Крем</span>
+                        </div>
+                        <div class="progress-step" data-step="decoration">
+                            <div class="step-icon">✨</div>
+                            <span>Декор</span>
+                        </div>
+                        <div class="progress-line"></div>
+                    </div>
+
+                    <!-- 3D Cake Preview -->
+                    <div class="preview-cake-3d" id="preview-cake">
+                        <div class="cake-scene">
+                            <div class="cake-container">
+                                <!-- Tier 1 (Bottom) -->
+                                <div class="cake-tier tier-1" id="tier-1">
+                                    <div class="cake-base-3d" id="cake-base-1">
+                                        <div class="cake-top"></div>
+                                        <div class="cake-side"></div>
+                                        <div class="cake-texture"></div>
+                                    </div>
+                                    <div class="cake-cream-3d" id="cake-cream-1">
+                                        <div class="cream-layer"></div>
+                                        <div class="cream-texture"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tier 2 (Middle) -->
+                                <div class="cake-tier tier-2" id="tier-2" style="display: none;">
+                                    <div class="cake-base-3d" id="cake-base-2">
+                                        <div class="cake-top"></div>
+                                        <div class="cake-side"></div>
+                                        <div class="cake-texture"></div>
+                                    </div>
+                                    <div class="cake-cream-3d" id="cake-cream-2">
+                                        <div class="cream-layer"></div>
+                                        <div class="cream-texture"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tier 3 (Top) -->
+                                <div class="cake-tier tier-3" id="tier-3" style="display: none;">
+                                    <div class="cake-base-3d" id="cake-base-3">
+                                        <div class="cake-top"></div>
+                                        <div class="cake-side"></div>
+                                        <div class="cake-texture"></div>
+                                    </div>
+                                    <div class="cake-cream-3d" id="cake-cream-3">
+                                        <div class="cream-layer"></div>
+                                        <div class="cream-texture"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="cake-decorations-3d" id="cake-decorations"></div>
+                                <div class="cake-shadow"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nutrition & Price Info -->
+                    <div class="cake-info-panel">
+                        <div class="nutrition-display" id="nutrition-display">
+                            <h4><i class="fas fa-chart-pie"></i> Пищевая ценность</h4>
+                            <div class="nutrition-stats">
+                                <div class="nutrition-item">
+                                    <span class="label">Калории:</span>
+                                    <span class="value" id="calories">0 ккал</span>
+                                </div>
+                                <div class="nutrition-item">
+                                    <span class="label">Белки:</span>
+                                    <span class="value" id="proteins">0 г</span>
+                                </div>
+                                <div class="nutrition-item">
+                                    <span class="label">Жиры:</span>
+                                    <span class="value" id="fats">0 г</span>
+                                </div>
+                                <div class="nutrition-item">
+                                    <span class="label">Углеводы:</span>
+                                    <span class="value" id="carbs">0 г</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="price-display">
+                            <span class="price-label">Итоговая стоимость:</span>
+                            <span class="price-value" id="total-price">0 ₽</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary add-to-cart" id="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Добавить в корзину
+                    </button>
+                </div>
+
+                <!-- Constructor Options -->
+                <div class="constructor-options">
+                    <!-- Tiers Selection -->
+                    <div class="option-group">
+                        <h4><i class="fas fa-layer-group"></i> Количество ярусов</h4>
+                        <div class="option-cards tiers-cards">
+                            <div class="option-card" data-type="tiers" data-value="1" data-price="0">
+                                <div class="option-icon">🎂</div>
+                                <h5>Одноярусный</h5>
+                                <p>Классический торт</p>
+                                <span class="option-price">Базовая цена</span>
+                                <button class="info-btn" data-ingredient="single-tier">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="tiers" data-value="2" data-price="800">
+                                <div class="option-icon">🎂<br/>🎂</div>
+                                <h5>Двухярусный</h5>
+                                <p>Элегантный дизайн</p>
+                                <span class="option-price">+800 ₽</span>
+                                <button class="info-btn" data-ingredient="double-tier">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="tiers" data-value="3" data-price="1500">
+                                <div class="option-icon">🎂<br/>🎂<br/>🎂</div>
+                                <h5>Трёхярусный</h5>
+                                <p>Роскошный праздничный торт</p>
+                                <span class="option-price">+1500 ₽</span>
+                                <button class="info-btn" data-ingredient="triple-tier">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="option-group">
+                        <h4><i class="fas fa-ruler"></i> Размер торта</h4>
+                        <div class="option-cards">
+                            <div class="option-card" data-type="size" data-value="small" data-price="800">
+                                <div class="option-icon">🧁</div>
+                                <h5>Маленький</h5>
+                                <p>6 порций</p>
+                                <span class="option-price">800 ₽</span>
+                                <button class="info-btn" data-ingredient="small-cake">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="size" data-value="medium" data-price="1200">
+                                <div class="option-icon">🎂</div>
+                                <h5>Средний</h5>
+                                <p>12 порций</p>
+                                <span class="option-price">1200 ₽</span>
+                                <button class="info-btn" data-ingredient="medium-cake">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="size" data-value="large" data-price="1800">
+                                <div class="option-icon">🍰</div>
+                                <h5>Большой</h5>
+                                <p>20 порций</p>
+                                <span class="option-price">1800 ₽</span>
+                                <button class="info-btn" data-ingredient="large-cake">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Base Selection -->
+                    <div class="option-group">
+                        <h4><i class="fas fa-layer-group"></i> Основа торта</h4>
+                        <div class="option-cards">
+                            <div class="option-card" data-type="base" data-value="vanilla" data-price="0">
+                                <div class="option-icon">🍦</div>
+                                <h5>Ванильный бисквит</h5>
+                                <p>Классический выбор</p>
+                                <span class="option-price">+0 ₽</span>
+                                <button class="info-btn" data-ingredient="vanilla">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="base" data-value="chocolate" data-price="150">
+                                <div class="option-icon">🍫</div>
+                                <h5>Шоколадный бисквит</h5>
+                                <p>Насыщенный вкус</p>
+                                <span class="option-price">+150 ₽</span>
+                                <button class="info-btn" data-ingredient="chocolate">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="base" data-value="red-velvet" data-price="250">
+                                <div class="option-icon">❤️</div>
+                                <h5>Красный бархат</h5>
+                                <p>Изысканный десерт</p>
+                                <span class="option-price">+250 ₽</span>
+                                <button class="info-btn" data-ingredient="red-velvet">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="base" data-value="carrot" data-price="200">
+                                <div class="option-icon">🥕</div>
+                                <h5>Морковный</h5>
+                                <p>Полезный и вкусный</p>
+                                <span class="option-price">+200 ₽</span>
+                                <button class="info-btn" data-ingredient="carrot">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filling Selection -->
+                    <div class="option-group">
+                        <h4><i class="fas fa-heart"></i> Начинка</h4>
+                        <div class="option-cards">
+                            <div class="option-card" data-type="filling" data-value="strawberry" data-price="300">
+                                <div class="option-icon">🍓</div>
+                                <h5>Клубничная</h5>
+                                <p>Свежие ягоды</p>
+                                <span class="option-price">+300 ₽</span>
+                                <button class="info-btn" data-ingredient="strawberry">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="filling" data-value="chocolate" data-price="250">
+                                <div class="option-icon">🍫</div>
+                                <h5>Шоколадная</h5>
+                                <p>Темный шоколад</p>
+                                <span class="option-price">+250 ₽</span>
+                                <button class="info-btn" data-ingredient="chocolate-filling">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="filling" data-value="caramel" data-price="350">
+                                <div class="option-icon">🍯</div>
+                                <h5>Карамельная</h5>
+                                <p>Соленая карамель</p>
+                                <span class="option-price">+350 ₽</span>
+                                <button class="info-btn" data-ingredient="caramel">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="filling" data-value="cherry" data-price="320">
+                                <div class="option-icon">🍒</div>
+                                <h5>Вишневая</h5>
+                                <p>Кислая вишня</p>
+                                <span class="option-price">+320 ₽</span>
+                                <button class="info-btn" data-ingredient="cherry">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cream Selection -->
+                    <div class="option-group">
+                        <h4><i class="fas fa-cloud"></i> Крем</h4>
+                        <div class="option-cards">
+                            <div class="option-card" data-type="cream" data-value="buttercream" data-price="200">
+                                <div class="option-icon">🧈</div>
+                                <h5>Масляный крем</h5>
+                                <p>Классический</p>
+                                <span class="option-price">+200 ₽</span>
+                                <button class="info-btn" data-ingredient="buttercream">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="cream" data-value="cheese" data-price="300">
+                                <div class="option-icon">🧀</div>
+                                <h5>Сливочный сыр</h5>
+                                <p>Нежный вкус</p>
+                                <span class="option-price">+300 ₽</span>
+                                <button class="info-btn" data-ingredient="cheese">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="cream" data-value="whipped" data-price="150">
+                                <div class="option-icon">☁️</div>
+                                <h5>Взбитые сливки</h5>
+                                <p>Легкий крем</p>
+                                <span class="option-price">+150 ₽</span>
+                                <button class="info-btn" data-ingredient="whipped">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decorations Selection -->
+                    <div class="option-group">
+                        <h4><i class="fas fa-star"></i> Декор</h4>
+                        <div class="option-cards decoration-cards">
+                            <div class="option-card" data-type="decoration" data-value="flowers" data-price="400">
+                                <div class="option-icon">🌸</div>
+                                <h5>Цветы из крема</h5>
+                                <span class="option-price">+400 ₽</span>
+                                <button class="info-btn" data-ingredient="flowers">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="decoration" data-value="berries" data-price="350">
+                                <div class="option-icon">🫐</div>
+                                <h5>Свежие ягоды</h5>
+                                <span class="option-price">+350 ₽</span>
+                                <button class="info-btn" data-ingredient="berries">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="decoration" data-value="chocolate-chips" data-price="200">
+                                <div class="option-icon">🍫</div>
+                                <h5>Шоколадная крошка</h5>
+                                <span class="option-price">+200 ₽</span>
+                                <button class="info-btn" data-ingredient="chocolate-chips">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                            <div class="option-card" data-type="decoration" data-value="nuts" data-price="250">
+                                <div class="option-icon">🥜</div>
+                                <h5>Орехи</h5>
+                                <span class="option-price">+250 ₽</span>
+                                <button class="info-btn" data-ingredient="nuts">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <section id="cart" class="cart">
+        <div class="container">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Корзина</h3>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <p class="empty-cart">Корзина пустая. Создайте свой первый торт!</p>
+            </div>
+            <div class="cart-total">
+                <span class="total-label">Общая сумма:</span>
+                <span class="total-value" id="cart-total">0 ₽</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkout-btn" disabled>
+                <i class="fas fa-credit-card"></i>
+                Оформить заказ
+            </button>
+        </div>
+    </section>
+
+    <!-- Ready Cakes Section -->
+    <section id="ready-cakes" class="ready-cakes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Готовые торты</h2>
+                <p>Популярные варианты, которые вы можете заказать прямо сейчас</p>
+            </div>
+            <div class="cakes-grid">
+                <div class="cake-card">
+                    <div class="cake-image">🎂</div>
+                    <div class="cake-info">
+                        <h4>Классический шоколадный</h4>
+                        <p>Шоколадный бисквит с кремом из сливочного сыра</p>
+                        <div class="cake-price">1500 ₽</div>
+                        <button class="btn btn-outline">Заказать</button>
+                    </div>
+                </div>
+                <div class="cake-card">
+                    <div class="cake-image">🍓</div>
+                    <div class="cake-info">
+                        <h4>Клубничный рай</h4>
+                        <p>Ванильный бисквит с клубничной начинкой</p>
+                        <div class="cake-price">1400 ₽</div>
+                        <button class="btn btn-outline">Заказать</button>
+                    </div>
+                </div>
+                <div class="cake-card">
+                    <div class="cake-image">🍰</div>
+                    <div class="cake-info">
+                        <h4>Красный бархат</h4>
+                        <p>Нежный торт с кремом из сливочного сыра</p>
+                        <div class="cake-price">1700 ₽</div>
+                        <button class="btn btn-outline">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>О нашей кондитерской</h2>
+                    <p>Уже 10 лет мы создаем торты, которые делают ваши праздники незабываемыми. Используем только свежие ингредиенты высочайшего качества.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Только свежие ингредиенты</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Индивидуальный подход</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Быстрая доставка</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Довольных клиентов</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Тортов создано</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Лет опыта</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-birthday-cake"></i>
+                    <h3>Сладкий Рай</h3>
+                    <p>Создаем торты вашей мечты с 2015 года</p>
+                </div>
+                <div class="footer-info">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@sweetparadise.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Сладкая, 123</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Режим работы</h4>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб-Вс: 10:00 - 18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Сладкий Рай. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Ingredient Details -->
+    <div class="modal-overlay" id="ingredient-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Детали ингредиента</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ingredient-image" id="modal-image">
+                    <div class="ingredient-icon" id="modal-icon">🎂</div>
+                </div>
+                <div class="ingredient-details">
+                    <h4 id="modal-ingredient-name">Название ингредиента</h4>
+                    <p id="modal-description">Описание ингредиента...</p>
+                    <div class="ingredient-nutrition">
+                        <h5>Пищевая ценность (на 100г):</h5>
+                        <div class="nutrition-grid">
+                            <div class="nutrition-cell">
+                                <span class="label">Калории:</span>
+                                <span class="value" id="modal-calories">0 ккал</span>
+                            </div>
+                            <div class="nutrition-cell">
+                                <span class="label">Белки:</span>
+                                <span class="value" id="modal-proteins">0 г</span>
+                            </div>
+                            <div class="nutrition-cell">
+                                <span class="label">Жиры:</span>
+                                <span class="value" id="modal-fats">0 г</span>
+                            </div>
+                            <div class="nutrition-cell">
+                                <span class="label">Углеводы:</span>
+                                <span class="value" id="modal-carbs">0 г</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ingredient-price">
+                        <span class="price-info">Доплата: <strong id="modal-price">0 ₽</strong></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-cancel">Закрыть</button>
+                <button class="btn btn-primary" id="modal-select">Выбрать</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
